@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'dart:developer';
 
+// 주간날씨
 class WDWeekInfo extends StatelessWidget {
   const WDWeekInfo({Key key}) : super(key: key);
 
