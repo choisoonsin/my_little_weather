@@ -153,7 +153,7 @@ class _tab1stState extends State<tab1st> {
                       //   width: 1.0,
                       //   color: Colors.white38
                       // ),
-                      // color: Colors.white30,
+                      color: Colors.white70,
                       gradient: LinearGradient(
                         colors: [Colors.yellow, Colors.blue],
                         begin: Alignment.centerLeft,
@@ -166,11 +166,11 @@ class _tab1stState extends State<tab1st> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.15,
-                          child: Text('목요일', style: TextStyle(fontSize: 16.0, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
+                          width: MediaQuery.of(context).size.width * 0.23,
+                          child: Text('목요일(어제)', style: TextStyle(fontSize: 16.0, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
                         ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.45,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           // color: Colors.black45,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -193,7 +193,7 @@ class _tab1stState extends State<tab1st> {
                       //   width: 1.0,
                       //   color: Colors.white38
                       // ),
-                      // color: Colors.white30,
+                      color: Colors.white70,
                       gradient: LinearGradient(
                         colors: [Colors.yellow, Colors.blue],
                         begin: Alignment.centerLeft,
@@ -206,11 +206,11 @@ class _tab1stState extends State<tab1st> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.15,
-                          child: Text('금요일', style: TextStyle(fontSize: 16.0, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
+                          width: MediaQuery.of(context).size.width * 0.23,
+                          child: Text('금요일(오늘)', style: TextStyle(fontSize: 16.0, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
                         ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.45,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           // color: Colors.black45,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -233,7 +233,7 @@ class _tab1stState extends State<tab1st> {
                       //   width: 1.0,
                       //   color: Colors.white38
                       // ),
-                      // color: Colors.white30,
+                      color: Colors.white70,
                       gradient: LinearGradient(
                         colors: [Colors.yellow, Colors.blue],
                         begin: Alignment.centerLeft,
@@ -246,11 +246,11 @@ class _tab1stState extends State<tab1st> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.15,
+                          width: MediaQuery.of(context).size.width * 0.23,
                           child: Text('토요일', style: TextStyle(fontSize: 16.0, color: Colors.blueGrey, fontWeight: FontWeight.bold),),
                         ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.45,
+                          width: MediaQuery.of(context).size.width * 0.4,
                           // color: Colors.black45,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
