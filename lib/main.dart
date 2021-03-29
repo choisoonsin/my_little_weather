@@ -1,3 +1,5 @@
+import 'package:app/screen/1st_tab_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/wd_widget.dart';
@@ -114,144 +116,55 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Color> _colors = [Colors.deepOrange, Colors.yellow];
     List<double> _stops = [0.0, 0.9];
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
-      body: Column(
-        children: [
-          Card(
-            elevation: 1.0,
-            child: Stack(
-              children: [
-                // 배경을 넣을까 ?
-                // Container(
-                //   height: MediaQuery.of(context).size.height * 0.25,
-                //   // color: Colors.black12
-                //   decoration: BoxDecoration(
-                //     // gradient: LinearGradient( // 그라데이션은 안어울림...
-                //     //   colors: _colors,
-                //     //   stops: _stops,
-                //     // ),
-                //     // image: DecorationImage(
-                //     //   image: NetworkImage('https://cdn.pixabay.com/photo/2017/10/23/02/19/beach-2879929__340.jpg'),
-                //     //   fit: BoxFit.fill
-                //     // )
-                //   )
-                // ),
-                // Location info
-                Container(
-                  height: 30,
-                  padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
-                  // color: Colors.black12,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(Icons.location_on_sharp),
-                      SizedBox(width: 5.0,),
-                      Text('서울시 광진구')
-                    ],
-                  )
-                ),
-                // Main WD Info
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.25,
-                  // color: Colors.black26,
-                  child: MainWDInfoBox(),
-                ),
-              ],
-            ),
-          ),
-          // Today's WD
-          Card(
-            elevation: 1.0,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(5.0),
-              height: 100,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CardTitle('시간대별 날씨'),
-                  SizedBox(height: 3.0,),
-                  // 시간별 날씨 횡스크롤 Area
-                  Container(
-                    height: 60.0,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        // the Container that has wd info by each time
-                        WDDayInfo('08시', 8, Icon(Icons.wb_sunny, color: Colors.yellow,),),
-                        WDDayInfo('09시', 9, Icon(Icons.wb_sunny, color: Colors.yellow,),),
-                        WDDayInfo('10시', 11, Icon(Icons.wb_sunny, color: Colors.yellow,),),
-                        WDDayInfo('11시', 12, Icon(Icons.wb_sunny, color: Colors.yellow,),),
-                        WDDayInfo('12시', 12, Icon(Icons.wb_sunny, color: Colors.yellow,),),
-                        WDDayInfo('13시', 14, Icon(Icons.wb_sunny, color: Colors.yellow,),),
-                        WDDayInfo('14시', 17, Icon(Icons.wb_cloudy, color: Colors.black54),),
-                        WDDayInfo('15시', 17, Icon(Icons.wb_cloudy, color: Colors.black54,),),
-                        WDDayInfo('16시', 14, Icon(Icons.wb_cloudy, color: Colors.black54,),),
-                        WDDayInfo('17시', 13, Icon(Icons.wb_cloudy, color: Colors.black54,),),
-                        WDDayInfo('18시', 13, Icon(Icons.wb_cloudy, color: Colors.black54,),),
-                        WDDayInfo('19시', 10, Icon(Icons.wb_cloudy, color: Colors.black54,),),
-                        WDDayInfo('20시', 7, Icon(Icons.wb_cloudy, color: Colors.black54,),),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          // 주간 날씨
-          Card(
-            elevation: 1.0,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(5.0),
-              height: 120,
-              child: Column(
-                children: [
-                  CardTitle('주간 날씨'),
-                  SizedBox(height: 3.0,),
-                  // 주간 날씨 횡스크롤 Area
-                  Container(
-                    height: 80.0,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Container(
-                          
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
-          ),
-          // Etc
-          Expanded(
-              child: Container(
-              // color: Colors.black12,
-              child: Padding(
-                padding: EdgeInsets.all(2),
-                child: Container(
-                  // color: Colors.black45,
-                  child: ListView.builder(
-                    itemCount: weather_info.length,
-                    itemBuilder: (context, index) {
-                      var item = weather_info[index];
-                      return _card(
-                        wtime: item['time'],
-                        condition: item['condition'],
-                      );
-                    },
-                  ),
-                ) 
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          titleSpacing: 20.0,
+          backgroundColor: Colors.purple,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blueGrey, Colors.blueAccent],
+                begin: Alignment.topCenter,
+                end:Alignment.bottomCenter,
               )
             ),
-          )
-        ],
+          ),
+          bottom: TabBar(
+            indicatorColor: Colors.white,
+            indicatorWeight: 4,
+            tabs: [
+              Tab(icon: Icon(Icons.home)),
+              Tab(icon: Icon(Icons.donut_small)),
+              Tab(icon: Icon(Icons.new_releases)),
+              Tab(icon: Icon(Icons.settings)),
+            ],
+          ),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+
+            },
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.notifications_none),
+              onPressed: () {
+
+              },
+            )
+          ],
+        ),
+        body: TabBarView(
+          children: [
+            tab1st(),
+            Text('2nd'),
+            Text('3rd'),
+            Text('4th'),
+          ],
+        )
       )
     );
   }

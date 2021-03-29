@@ -93,9 +93,7 @@ class WDDegree extends StatelessWidget {
               Container(
                 child: Text(_degreeMark, style: TextStyle(fontSize: markSize, fontWeight: isTempBold?FontWeight.bold:FontWeight.normal)),
               ),
-              Container(
-                
-              )
+              Expanded(child: Container())
             ],
           )
         ]
